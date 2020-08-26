@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div class="row">
+    <!-- 按钮组件 -->
+    <!-- <div class="row">
       <ch-button @click="click($event)">按钮</ch-button>
       <ch-button type="primary" disabled>禁用按钮</ch-button>
       <ch-button type="success">按钮</ch-button>
@@ -39,7 +40,20 @@
       <ch-button circle type="info" icon='delete'></ch-button>
       <ch-button circle type="warning" icon='delete'></ch-button>
       <ch-button circle type="danger" icon='delete'></ch-button>
-    </div>
+    </div> -->
+
+    <ch-button @click="handleOpen" type="primary">打开</ch-button>
+
+    <!-- 对话框组件 -->
+    <ch-dialog width="40%" top="10vh" :visible.sync='visible'>
+      <template #title>
+        标题
+      </template>
+      <template #footer>
+        <ch-button @click="close">取消</ch-button>
+        <ch-button type="primary" @click="close">确定</ch-button>
+      </template>
+    </ch-dialog>
   </div>
 </template>
 
@@ -47,10 +61,25 @@
 
 export default {
 
+  data () {
+    return {
+      visible: false
+    }
+  },
+
   methods: {
     click (e) {
       console.log('click', e)
+    },
+    // 打开dialog
+    handleOpen () {
+      this.visible = true
+    },
+    // 关闭
+    close () {
+      this.visible = false
     }
+
   }
 
 }
