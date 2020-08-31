@@ -1,32 +1,30 @@
 <template>
-  <div class="hm-dialog__wrapper" v-show="visible" @click.self="handleClose">
-    <div class="hm-dialog" :style="{width:width,marginTop:top}">
-      <div class="hm-dialog__header">
-        <!-- 标题插槽 -->
-        <slot name="title">
-          <!-- 后备内容 不指定插槽内容时的默认内容 -->
-          <span class="hm-dialog__title">{{ title }}</span>
-        </slot>
-        <button class="hm-dialog__headerbtn" @click="handleClose">
-          <i class="hm-icon-close"></i>
-        </button>
-      </div>
-      <div class="hm-dialog__body">
-        <!-- <span>这是一段信息</span> -->
-        <!-- 内容插槽 默认插槽-->
-        <slot></slot>
-      </div>
-      <div class="hm-dialog__footer" v-if="$slots.footer">
-        <!-- 底部插槽 -->
-        <slot name="footer"></slot>
-      </div>
-      <div class="hm-dialog__footer" v-if="$slots.footer">
-        <!-- 底部插槽 -->
-        <slot name="footer"></slot>
-      </div>
+  <transition name="fade">
+    <div class="hm-dialog__wrapper" v-show="visible" @click.self="handleClose">
+      <div class="hm-dialog" :style="{width:width,marginTop:top}">
+        <div class="hm-dialog__header">
+          <!-- 标题插槽 -->
+          <slot name="title">
+            <!-- 后备内容 不指定插槽内容时的默认内容 -->
+            <span class="hm-dialog__title">{{ title }}</span>
+          </slot>
+          <button class="hm-dialog__headerbtn" @click="handleClose">
+            <i class="hm-icon-close"></i>
+          </button>
+        </div>
+        <div class="hm-dialog__body">
+          <!-- <span>这是一段信息</span> -->
+          <!-- 内容插槽 默认插槽-->
+          <slot></slot>
+        </div>
+        <div class="hm-dialog__footer" v-if="$slots.footer">
+          <!-- 底部插槽 -->
+          <slot name="footer"></slot>
+        </div>
 
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -124,5 +122,34 @@ export default {
       }
     }
   }
+
+  // 深度作用选择器修饰过后，不会给类名添加属性选择器
+  ::v-deep .hm-button:first-child {
+    margin-right: 10px;
+  }
+}
+
+// 配合动画实现fade效果，类名只需要书写两个
+@keyframes fade {
+  0% {
+    // 透明和下移效果
+    opacity: 0;
+    transform: translateY(-10px);
+    bottom: -10px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    bottom: 0px;
+  }
+}
+
+// 进入过程中添加
+.fade-enter-active {
+  animation: fade 0.3s;
+}
+// 离开过程中添加
+.fade-leave-active {
+  animation: fade 0.3s reverse;
 }
 </style>
