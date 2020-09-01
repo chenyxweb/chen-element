@@ -55,6 +55,7 @@
     </ch-dialog> -->
 
     <!-- input组件 -->
+    <!-- show-password 自动转化成showPassword, 作为props传递给组件 -->
     <div class="input-wrapper">
       <ch-input
         placeholder="请输入用户名"
@@ -73,10 +74,21 @@
         :disabled="false"
         v-model="input"
         clearable
-        showPassword
+        show-password
       ></ch-input>
     </div>
 
+    <!-- switch -->
+    <ch-switch
+      v-model="isActive"
+      active-color="green"
+      inactive-color="red"
+    ></ch-switch>
+    <ch-switch
+      v-model="isActive"
+      active-color="#13ce66"
+      inactive-color="#ff4949"
+    ></ch-switch>
   </div>
 </template>
 
@@ -87,7 +99,8 @@ export default {
   data () {
     return {
       visible: false,
-      input: '123'
+      input: '123',
+      isActive: false
     }
   },
 
