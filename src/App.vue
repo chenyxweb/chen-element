@@ -42,9 +42,8 @@
       <ch-button circle type="danger" icon='delete'></ch-button>
     </div> -->
 
-    <ch-button @click="handleOpen" type="primary">打开</ch-button>
-
     <!-- 对话框组件 -->
+    <!-- <ch-button @click="handleOpen" type="primary">打开</ch-button>
     <ch-dialog width="40%" top="10vh" :visible.sync='visible'>
       <template #title>
         标题
@@ -53,7 +52,31 @@
         <ch-button @click="close">取消</ch-button>
         <ch-button type="primary" @click="close">确定</ch-button>
       </template>
-    </ch-dialog>
+    </ch-dialog> -->
+
+    <!-- input组件 -->
+    <div class="input-wrapper">
+      <ch-input
+        placeholder="请输入用户名"
+        type='text'
+        name='username'
+        v-model="input"
+        clearable
+        @blur="handleBlur(123,$event)"
+      ></ch-input>
+    </div>
+    <div class="input-wrapper">
+      <ch-input
+        placeholder="请输入密码"
+        type='password'
+        name='password'
+        :disabled="false"
+        v-model="input"
+        clearable
+        showPassword
+      ></ch-input>
+    </div>
+
   </div>
 </template>
 
@@ -63,7 +86,8 @@ export default {
 
   data () {
     return {
-      visible: false
+      visible: false,
+      input: '123'
     }
   },
 
@@ -78,6 +102,9 @@ export default {
     // 关闭
     close () {
       this.visible = false
+    },
+    handleBlur (value, e) {
+      console.log(value, e)
     }
 
   }
@@ -91,5 +118,9 @@ export default {
     margin-right: 15px;
     margin-bottom: 8px;
   }
+}
+.input-wrapper {
+  width: 200px;
+  margin-bottom: 5px;
 }
 </style>
