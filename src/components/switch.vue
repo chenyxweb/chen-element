@@ -1,5 +1,5 @@
 <template>
-  <label
+  <div
     class="hm-switch"
     @click="handleClick"
     :class="{'is-checked':value}"
@@ -10,7 +10,14 @@
     >
       <span class="hm-switch__button"></span>
     </span>
-  </label>
+    <!-- 表单元素支持name属性 -->
+    <input
+      class="hm-switch__input"
+      type="checkbox"
+      :name="name"
+      ref="input"
+    />
+  </div>
 </template>
 
 <script>
@@ -31,6 +38,11 @@ export default {
     inactiveColor: {
       type: String,
       default: ''
+    },
+    // 表单元素的name属性
+    name: {
+      type: String,
+      default: ''
     }
 
   },
@@ -43,6 +55,7 @@ export default {
       // })
       await this.$nextTick() // 基于promise封装
       this.setColor()
+      this.$refs.input.checked = this.value // 设置CheckBox的初始值
     },
     // 设置激活和非激活状态颜色
     setColor () {
@@ -61,6 +74,7 @@ export default {
   },
   mounted () {
     this.setColor()
+    this.$refs.input.checked = this.value // 设置CheckBox的初始值
   }
 
 }
@@ -101,6 +115,16 @@ export default {
       height: 16px;
       background-color: #fff;
     }
+  }
+
+  // input
+  // 隐藏input
+  .hm-switch__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
   }
 }
 .hm-switch.is-checked {

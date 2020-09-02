@@ -79,15 +79,16 @@
     </div>
 
     <!-- switch -->
-    <ch-switch
+    <!-- <ch-switch
       v-model="isActive"
       active-color="green"
       inactive-color="red"
-    ></ch-switch>
+    ></ch-switch> -->
     <ch-switch
       v-model="isActive"
       active-color="#13ce66"
       inactive-color="#ff4949"
+      name="remember"
     ></ch-switch>
   </div>
 </template>
