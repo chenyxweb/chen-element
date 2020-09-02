@@ -1133,11 +1133,11 @@ handlePasswordVisible () {
 
 ```html
 <template>
-  <label class="hm-switch">
+  <div class="hm-switch">
     <span class="hm-switch__core">
       <span class="hm-switch__button"></span>
     </span>
-  </label>
+  </div>
 </template>
 ```
 

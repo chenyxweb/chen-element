@@ -11,6 +11,7 @@
       <span class="hm-switch__button"></span>
     </span>
     <!-- 表单元素支持name属性 -->
+    <!-- :checked="value" -->
     <input
       class="hm-switch__input"
       type="checkbox"
