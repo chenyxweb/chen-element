@@ -1,5 +1,10 @@
 <template>
-  <button class="hm-button" :class="[`hm-button--${type}`,{'is-plain':plain,'is-round':round,'is-circle':circle,'is-disabled':disabled}]" :disabled="disabled" @click="click">
+  <button
+    class="hm-button"
+    :class="[`hm-button--${type}`,{'is-plain':plain,'is-round':round,'is-circle':circle,'is-disabled':disabled}]"
+    :disabled="disabled"
+    @click="click"
+  >
     <!-- 图标 -->
     <i :class="`hm-icon-${icon}`" v-if="icon"></i>
     <!-- 传入了默认插槽,才展示span -->
