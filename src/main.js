@@ -8,6 +8,8 @@ import ChRadio from './components/radio.vue'
 import ChRadioGroup from './components/radio-group.vue'
 import ChCheckbox from './components/checkbox.vue'
 import ChCheckboxGroup from './components/checkbox-group.vue'
+import ChForm from './components/form.vue'
+import ChFormItem from './components/form-item.vue'
 
 // 引入icon
 import './assets/font/font.scss'
@@ -22,6 +24,8 @@ Vue.component(ChRadio.name, ChRadio)
 Vue.component(ChRadioGroup.name, ChRadioGroup)
 Vue.component(ChCheckbox.name, ChCheckbox)
 Vue.component(ChCheckboxGroup.name, ChCheckboxGroup)
+Vue.component(ChForm.name, ChForm)
+Vue.component(ChFormItem.name, ChFormItem)
 
 new Vue({
   render: h => h(App)

@@ -104,13 +104,23 @@
     </ch-radio-group> -->
 
     <!-- checkbox -->
-    <ch-checkbox v-model="checked">是否选中</ch-checkbox>
+    <!-- <ch-checkbox v-model="checked">是否选中</ch-checkbox>
 
     <ch-checkbox-group v-model="selectArr">
       <ch-checkbox label='A'></ch-checkbox>
       <ch-checkbox label='B'></ch-checkbox>
       <ch-checkbox label='C'></ch-checkbox>
-    </ch-checkbox-group>
+    </ch-checkbox-group> -->
+
+    <!-- form -->
+    <ch-form :model="model" label-width='80px'>
+      <ch-form-item label="用户名">
+        <ch-input placeholder="请输入用户名" v-model="model.username"></ch-input>
+      </ch-form-item>
+      <ch-form-item label="记住密码">
+        <ch-switch v-model="model.active"></ch-switch>
+      </ch-form-item>
+    </ch-form>
 
   </div>
 </template>
@@ -126,7 +136,11 @@ export default {
       isActive: false,
       gender: '1', // 性别
       checked: false, // 是否选中
-      selectArr: ['A'] // checkboxGroup选中的项目
+      selectArr: ['A'], // checkboxGroup选中的项目
+      model: {
+        username: '',
+        active: false
+      } // 表单数据
     }
   },
 
