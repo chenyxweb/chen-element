@@ -53,6 +53,7 @@ export default {
   created () {
     // 拿到所有的插槽
     // console.log(this.$slots)
+    // this.$el.
   }
 
 }

@@ -1435,7 +1435,7 @@ radio的基本使用
   }
   .hm-radio__label {
     font-size: 14px;
-    padding-left: 10px;
+    padding-left: 4px;
   }
 }
 ```
@@ -1543,8 +1543,7 @@ computed: {
 ### 	前置知识
 
 ```js
-provide与inject
-
+provide与inject , 类似于react中的context
 ```
 
 ### 基本结构
@@ -1553,7 +1552,7 @@ provide与inject
 
 ```html
 <template>
-  <div class="radio-group">
+  <div class="hm-radio-group">
     <slot></slot>
   </div>
 </template>
@@ -1565,6 +1564,7 @@ provide与inject
 ```html
 export default {
   name: 'HmRadioGroup',
+  // provide为函数的方式能传递组件
   provide () {
     return {
       RadioGroup: this

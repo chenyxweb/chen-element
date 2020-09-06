@@ -113,7 +113,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 .hm-input {
   width: 100%;
   position: relative;
@@ -173,5 +173,9 @@ export default {
       transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
   }
+}
+
+.hm-input__icon + .hm-input__icon{
+  margin-left: 2px;
 }
 </style>

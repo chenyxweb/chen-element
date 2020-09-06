@@ -83,7 +83,7 @@ export default {
 // 当初次渲染和value改变时 --> value ? 边框背景设置成activeColor : 边框背景设置成inactiveColor  (设置行内样式不影响类样式)
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 .hm-switch {
   display: inline-flex;
   align-items: center;
