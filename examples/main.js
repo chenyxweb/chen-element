@@ -35,9 +35,9 @@ import Vue from 'vue'
 import App from './App.vue'
 
 // 引入组件库
-import ChElementUI from '../packages'
+import ChenElementUI from '../packages'
 
-Vue.use(ChElementUI)
+Vue.use(ChenElementUI)
 
 Vue.config.productionTip = false
 

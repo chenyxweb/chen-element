@@ -58,16 +58,16 @@ vue create demo
 + 安装组件库
 
 ```js
-yarn add itcast-ui
+yarn add chen-element-ui
 ```
 
 + 全局导入
 
 ```js
-import ItcastUI from 'itcast-ui'
-import 'itcast-ui/lib/itcast-ui.css'
+import ChenElementUI from 'chen-element-ui'
+import 'chen-element-ui/lib/itcast-ui.css'
 
-Vue.use(ItcastUI)
+Vue.use(ChenElementUI)
 ```
 
 + 使用组件
@@ -2102,7 +2102,7 @@ new Vue({
 修改package.json文件
 
 ```js
-"private": false,
+"private": false, // 公有库才可以上传npm
 "main": "dist/itcast-ui.umd.min.js",
 "author": {
   "name": "胡聪聪"
