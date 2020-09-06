@@ -6,6 +6,8 @@ import ChInput from './components/input.vue'
 import ChSwitch from './components/switch.vue'
 import ChRadio from './components/radio.vue'
 import ChRadioGroup from './components/radio-group.vue'
+import ChCheckbox from './components/checkbox.vue'
+import ChCheckboxGroup from './components/checkbox-group.vue'
 
 // 引入icon
 import './assets/font/font.scss'
@@ -18,6 +20,8 @@ Vue.component(ChInput.name, ChInput)
 Vue.component(ChSwitch.name, ChSwitch)
 Vue.component(ChRadio.name, ChRadio)
 Vue.component(ChRadioGroup.name, ChRadioGroup)
+Vue.component(ChCheckbox.name, ChCheckbox)
+Vue.component(ChCheckboxGroup.name, ChCheckboxGroup)
 
 new Vue({
   render: h => h(App)

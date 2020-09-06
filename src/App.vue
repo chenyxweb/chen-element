@@ -94,14 +94,23 @@
     <!-- <hr> -->
 
     <!-- radio组件 -->
-    <ch-radio label="1" name="gender" v-model="gender">男</ch-radio>
-    <ch-radio label="0" name="gender" v-model="gender">女</ch-radio>
+    <!-- <ch-radio label="1" name="gender" v-model="gender">男</ch-radio>
+    <ch-radio label="0" name="gender" v-model="gender">女</ch-radio> -->
 
     <!-- radio-group组件 -->
-    <ch-radio-group v-model="gender">
+    <!-- <ch-radio-group v-model="gender">
       <ch-radio label="1" name="gender">男</ch-radio>
       <ch-radio label="0" name="gender">女</ch-radio>
-    </ch-radio-group>
+    </ch-radio-group> -->
+
+    <!-- checkbox -->
+    <ch-checkbox v-model="checked">是否选中</ch-checkbox>
+
+    <ch-checkbox-group v-model="selectArr">
+      <ch-checkbox label='A'></ch-checkbox>
+      <ch-checkbox label='B'></ch-checkbox>
+      <ch-checkbox label='C'></ch-checkbox>
+    </ch-checkbox-group>
 
   </div>
 </template>
@@ -115,7 +124,9 @@ export default {
       visible: false,
       input: '123',
       isActive: false,
-      gender: '1' // 性别
+      gender: '1', // 性别
+      checked: false, // 是否选中
+      selectArr: ['A'] // checkboxGroup选中的项目
     }
   },
 
