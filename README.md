@@ -65,7 +65,7 @@ yarn add chen-element-ui
 
 ```js
 import ChenElementUI from 'chen-element-ui'
-import 'chen-element-ui/lib/itcast-ui.css'
+import 'chen-element-ui/lib/chen-element-ui.css'
 
 Vue.use(ChenElementUI)
 ```
