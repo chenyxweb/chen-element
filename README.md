@@ -2016,7 +2016,7 @@ import Switch from './switch'
 import CheckboxGroup from './checkbox-group'
 import Form from './form'
 import FormItem from './form-item'
-import './fonts/font.scss'
+import './font/font.scss'
 
 // 存储组件列表
 const components = [
